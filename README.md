@@ -2,13 +2,6 @@
 
 Tiny package that ships Tomás' Matplotlib style and helpers.
 
-## Features
-
-- Custom matplotlib style with optimized settings for scientific plots
-- Helper functions for proper colorbar positioning with imshow plots
-- Context manager for temporary style application
-- Optional integration with SciencePlots styles
-
 ## Install
 
 ```bash
@@ -53,12 +46,4 @@ with tp.style():
 
 # Or load just the mplstyle path yourself
 plt.style.use(nplt.style_path())  # same as tp.apply() but without extra logic
-
-# For imshow plots with proper colorbars:
-im, cbar = nplt.imshow_with_colorbar(data)
-# or
-fig, axes, add_colorbar = nplt.subplots_with_colorbar(2, 2)
-im = axes[0, 0].imshow(data)
-cbar = add_colorbar(im, axes[0, 0])
-```
 ```
