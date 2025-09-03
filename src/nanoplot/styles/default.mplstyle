@@ -20,7 +20,9 @@ legend.handleheight: 0.75
 legend.handletextpad: 0.5
 legend.labelspacing: 0.4
 
-axes.prop_cycle: cycler(color=['#1f77b4', '#ff7f0e', '#2ca02c', '#9467bd', '#d62728', '#8c564b', '#e377c2', '#7f7f7f', '#17becf', '#bcbd22'])
+axes.prop_cycle: color ['#1f77b4', '#ff7f0e', '#2ca02c', '#9467bd',
+                        '#d62728', '#8c564b', '#e377c2', '#7f7f7f',
+                        '#17becf', '#bcbd22']
 
 text.usetex: False
 font.family: sans-serif
