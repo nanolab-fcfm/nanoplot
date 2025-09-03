@@ -5,6 +5,7 @@ from typing import Iterable, List
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 def style_path(name: str = "default") -> str:
@@ -83,3 +84,82 @@ def style(
         yield
     finally:
         mpl.rcParams.update(old)
+
+
+def imshow_with_colorbar(data, ax=None, **kwargs):
+    """
+    Create an imshow plot with a properly sized colorbar.
+    
+    This function ensures the colorbar has the full height of the image
+    by using make_axes_locatable to create a proper colorbar axis.
+    
+    Parameters
+    ----------
+    data : array-like
+        The data to display with imshow
+    ax : matplotlib.axes.Axes, optional
+        The axes to plot on. If None, uses the current axes.
+    **kwargs : dict
+        Additional arguments passed to plt.imshow
+        
+    Returns
+    -------
+    im : matplotlib.image.AxesImage
+        The imshow object
+    cbar : matplotlib.colorbar.Colorbar
+        The colorbar object
+    """
+    from mpl_toolkits.axes_grid1 import make_axes_locatable
+    
+    if ax is None:
+        ax = plt.gca()
+    
+    # Create the imshow plot
+    im = ax.imshow(data, **kwargs)
+    
+    # Create a divider for the existing axes instance
+    divider = make_axes_locatable(ax)
+    
+    # Append axes to the right of ax, with 20% of the width
+    cax = divider.append_axes("right", size="5%", pad=0.05)
+    
+    # Create the colorbar
+    cbar = plt.colorbar(im, cax=cax)
+    
+    return im, cbar
+
+
+def subplots_with_colorbar(nrows=1, ncols=1, **kwargs):
+    """
+    Create subplots with proper colorbar support.
+    
+    This function creates subplots and returns a helper function
+    that can be used to add colorbars to any of the subplots.
+    
+    Parameters
+    ----------
+    nrows, ncols : int
+        Number of rows and columns for subplots
+    **kwargs : dict
+        Additional arguments passed to plt.subplots
+        
+    Returns
+    -------
+    fig : matplotlib.figure.Figure
+        The figure object
+    axes : array-like
+        The axes objects
+    add_colorbar : function
+        A function that takes (im, ax) and returns a colorbar
+    """
+    from mpl_toolkits.axes_grid1 import make_axes_locatable
+    
+    fig, axes = plt.subplots(nrows, ncols, **kwargs)
+    
+    def add_colorbar(im, ax):
+        """Add a colorbar to the given axes."""
+        divider = make_axes_locatable(ax)
+        cax = divider.append_axes("right", size="5%", pad=0.05)
+        return plt.colorbar(im, cax=cax)
+    
+    return fig, axes, add_colorbar
