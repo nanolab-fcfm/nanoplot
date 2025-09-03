@@ -34,7 +34,9 @@ pip install -e .
 
 ```python
 import matplotlib.pyplot as plt
+import scienceplots
 import nanoplot as nplt
+nplt.apply()
 
 # Easiest: apply your default style
 nplt.apply()  # uses SciencePlots 'science','nature' if available, then your style
