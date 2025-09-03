@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nanoplot"
+version = "0.1.0"
+
+description = "Tomás' reusable Matplotlib style + helpers"
+authors = [{name = "Tomás Rojas"}]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["matplotlib>=3.5"]
+
+[project.optional-dependencies]
+science = ["SciencePlots>=2.1.0"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+nanoplot = ["styles/*.mplstyle"]

@@ -1,0 +1,32 @@
+# Tomás' default plotting style (bundled)
+
+lines.linewidth: 6
+lines.markersize: 22
+
+xtick.major.size: 10
+ytick.major.size: 10
+xtick.major.width: 2
+ytick.major.width: 2
+xtick.labelsize: 55
+ytick.labelsize: 55
+
+axes.labelsize: 55
+axes.titlesize: 55
+axes.linewidth: 3.5
+
+legend.fontsize: 35
+legend.handlelength: 2.5
+legend.handleheight: 0.75
+legend.handletextpad: 0.5
+legend.labelspacing: 0.4
+
+axes.prop_cycle: cycler('color', ['#1f77b4', '#ff7f0e', '#2ca02c',
+                                  '#9467bd', '#d62728', '#8c564b',
+                                  '#e377c2', '#7f7f7f', '#17becf',
+                                  '#bcbd22'])
+
+text.usetex: False
+font.family: sans-serif
+font.sans-serif: DejaVu Sans
+
+figure.figsize: 20, 20
