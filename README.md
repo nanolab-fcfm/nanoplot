@@ -9,7 +9,20 @@ Tiny package that ships Tomás' Matplotlib style and helpers.
 uv add nanoplot
 
 # From Git repository
-uv add git+https://github.com/nanolab-fcfm/nanolabplot.git
+# For public repositories:
+uv add git+https://github.com/nanolab-fcfm/nanoplot.git
+
+# For private repositories (requires authentication):
+# Option 1: SSH (recommended)
+uv add git+ssh://git@github.com/nanolab-fcfm/nanoplot.git
+
+# Option 2: HTTPS with GitHub CLI
+gh auth login
+uv add git+https://github.com/nanolab-fcfm/nanoplot.git
+
+# Option 3: HTTPS with personal access token
+# Will prompt for username/token if repository is private
+uv add git+https://github.com/nanolab-fcfm/nanoplot.git
 
 # Local development
 pip install -e .
