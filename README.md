@@ -5,6 +5,13 @@ Tiny package that ships Tomás' Matplotlib style and helpers.
 ## Install
 
 ```bash
+# From PyPI (when published)
+uv add nanoplot
+
+# From Git repository
+uv add git+https://github.com/nanolab-fcfm/nanolabplot.git
+
+# Local development
 pip install -e .
 # (or) pip install .    # for a regular install
 # optional: pip install ".[science]"  # if you want SciencePlots styles available

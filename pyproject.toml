@@ -5,11 +5,22 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "nanoplot"
 version = "0.1.0"
-
 description = "Tomás' reusable Matplotlib style + helpers"
 authors = [{name = "Tomás Rojas"}]
 readme = "README.md"
 requires-python = ">=3.9"
+license = "MIT"
+keywords = ["matplotlib", "plotting", "style", "visualization"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Visualization",
+]
 dependencies = ["matplotlib>=3.5"]
 
 [project.optional-dependencies]
