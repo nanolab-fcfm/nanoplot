@@ -2,6 +2,8 @@
 
 Tiny package that ships Tomás' Matplotlib style and helpers.
 
+**Dependencies:** This package automatically imports and uses [SciencePlots](https://github.com/garrettj403/SciencePlots) for enhanced scientific plotting styles.
+
 ## Install
 
 ```bash
