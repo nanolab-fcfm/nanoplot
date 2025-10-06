@@ -685,11 +685,12 @@ wheels = [
 
 [[package]]
 name = "nanoplot"
-version = "0.1.0"
+version = "0.1.1"
 source = { editable = "." }
 dependencies = [
     { name = "matplotlib", version = "3.9.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
     { name = "matplotlib", version = "3.10.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
+    { name = "scienceplots" },
 ]
 
 [package.optional-dependencies]
@@ -700,6 +701,7 @@ science = [
 [package.metadata]
 requires-dist = [
     { name = "matplotlib", specifier = ">=3.5" },
+    { name = "scienceplots", specifier = ">=2.1.1" },
     { name = "scienceplots", marker = "extra == 'science'", specifier = ">=2.1.0" },
 ]
 provides-extras = ["science"]
