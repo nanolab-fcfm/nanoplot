@@ -9,6 +9,8 @@ xtick.major.width: 2
 ytick.major.width: 2
 xtick.labelsize: 55
 ytick.labelsize: 55
+xtick.major.pad: 20
+ytick.major.pad: 20
 
 axes.labelsize: 55
 axes.titlesize: 55
