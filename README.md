@@ -34,7 +34,6 @@ pip install -e .
 
 ```python
 import matplotlib.pyplot as plt
-import scienceplots
 import nanoplot as nplt
 nplt.apply()
 
@@ -42,10 +41,10 @@ nplt.apply()
 nplt.apply()  # uses SciencePlots 'science','nature' if available, then your style
 
 # Or use as a context manager (auto-reverts on exit)
-with tp.style():
+with nplt.style():
     plt.plot([0,1],[0,1])
     plt.show()
 
 # Or load just the mplstyle path yourself
-plt.style.use(nplt.style_path())  # same as tp.apply() but without extra logic
+plt.style.use(nplt.style_path())  # same as nplt.apply() but without extra logic
 ```
